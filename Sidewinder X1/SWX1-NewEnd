@@ -1,0 +1,14 @@
+; Last updated 20190324
+G4 ; wait
+M83 ; relative extrusion mode
+G92 E0 ; prepare to retract
+G1 E-2 F4800; retract quickly to avoid ooze
+G1 Z{machine_height}﻿ ; raise Z
+G0 X0 Y200 F10200; present bed
+M221 S100 ; reset extruder factor to 100%
+M900 K0 ; reset linear acceleration
+M104 S0 ; turn off temperature
+M140 S0 ; turn off heatbed
+M107 ; turn off fan
+M84 ; disable motors
+M300 S100 P10 ; chirp
